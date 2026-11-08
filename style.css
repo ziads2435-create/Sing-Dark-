@@ -1,0 +1,236 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --main-color:linear-gradient(135deg, #232526 0%, #414345 100%);
+    --box-top:   0 0 60px rgb(133, 18, 18),
+       0 0 80px rgb(245, 66, 43);
+       --box-bottom: 0 0 60px rgba(189, 15, 15, 0.6),
+        0 0 100px rgba(122, 9, 9, 0.4);
+        --bottom-back: #ff4b2b;
+        --top-back: #ff416c;
+        --form-back:rgba(255, 255, 255, 0.20);
+        --form-box: 0 20px 60px rgba(0, 0, 0, 0.50);
+        --input-back:rgba(255, 255, 255, 0.50);
+        --input-border:2px solid black;
+        --input-outline:2px solid #ff416c;
+        --button-border:2px solid #ff416c;
+        --button-color: rgb(255, 255, 255);
+        --button-back:#ff416c;
+        --button-back-hov:#525d8b;
+        --button-color-hov:white;
+        --fa-brands-color:#ff416c;
+        --fa-brands-back: rgba(255, 255, 255, 0.60); 
+}
+body{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width:100%;
+    justify-content: center;
+background: var(--main-color);
+background-repeat: no-repeat;
+background-attachment:fixed;
+overflow: hidden;
+position: relative;
+font-family: Arial, Helvetica, sans-serif;
+}
+.background-top {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background:var(--top-back);
+    top: -120px;
+    left: -120px;
+    filter: blur(50px);
+    z-index: -1;
+    /* الظل */
+    box-shadow:var(--box-top); 
+    
+}
+
+.background-bottom {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background:var(--bottom-back);
+    bottom: -100px;
+    right: -100px;
+    z-index: -1;
+    filter: blur(50px);
+    box-shadow: var(--box-bottom);
+}
+main{
+    display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height:550px;
+min-height:100vh;
+}
+form{
+   backdrop-filter: blur(20px);
+        background: var(--form-back);
+     width: 100%;
+    max-width: 350px; 
+    max-height: 550px;
+    height: 100%;
+   display: flex;
+    flex-direction: column;
+    align-items: center;
+justify-content: center;
+ gap: 1rem;
+ border-radius: 20px;
+ box-shadow:var(--form-box);
+}
+input:not(input[type="checkbox"]){
+    padding: 7px 10px;
+    max-width: 300px;
+    border: none;
+    font-size: 1rem;
+    border-radius: 20px;
+    margin-left: 0.7rem;
+    background-color:var(--input-back);
+}
+input[type="checkbox"]{
+     appearance: none; /* الغي شكل المتصفح الافتراضي */
+     width: 15px;
+     height: 15px;
+     background-color: transparent;
+     border: var(--input-border);
+     border-radius: 4px;
+     cursor: pointer;
+}
+input[type="checkbox"]:checked{
+    background-color: var(--top-back);
+}
+.remember{
+    font-size: clamp(10px,1vw,14px);
+}
+input:focus:not(.remember input){
+    outline: var(--input-outline);
+     outline-offset:3px ;
+}
+form button{
+    padding:clamp(5px,4vw,15px);
+    border-radius: 10px;
+    margin: 15px 0 0 0;
+    font-weight: bold;
+    font-size: 1rem;
+     border:var(--button-border);
+     background: var(--button-back);
+   color:var(--button-color);
+    width: 100%;
+    max-width: 110px;
+    transition:all 0.3s ease;
+    cursor: pointer;
+}
+
+form button:active{
+    transform: translateY(2px);
+    opacity: 0.4;
+}
+.icons{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+.fa-brands{
+    color:var(--fa-brands-color);
+    font-size:x-large; 
+    background-color:var(--fa-brands-back);
+    border-radius: 50%; 
+    padding: 10px; 
+    cursor: pointer;
+    transition: 0.3 ease;
+}
+.fa-brands:hover{
+    background:var(--fa-brands-color);
+    color:var(--fa-brands-back);
+}
+.form-top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+/* امنع عين 【entity-Edge¦canonical_name=Microsoft Edge】 الافتراضية */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+.password-box{
+    position: relative;
+}
+#eye{
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    cursor: pointer;
+    user-select: none;
+    transform: translateY(-50%);
+}
+
+@media(max-width:600px){
+html, body{
+    width: 100%;
+    overflow: hidden;
+    height:100vh;
+}
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     width: 90%;
+    gap: 1rem;
+    max-height:450px ;
+}
+.background-bottom{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+     bottom: -40px;
+    right: -40px;
+}
+.background-top{
+     width: 150px;
+    height: 150px;
+    position: absolute;
+     top: -40px;
+    left: -40px;
+}
+}
+@media (hover:hover){
+    form button:hover{
+        background-color:transparent;
+        
+    }
+    .fa-brands:hover{
+           background-color: var(--fa-brands-color); /* مش #7a569e */
+        color: var(--fa-brands-back);
+    }
+}
+@media (min-width:641px) and (max-width:1024px) {
+html, body{
+width: 100%;
+height: 100vh;
+overflow: hidden;
+}
+form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.background-bottom{
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+}
+}
+
