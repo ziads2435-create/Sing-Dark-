@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>css sign in page</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="background-top"></div>
+    <main>
+        <form action="#">
+            <h1>Sign-in</h1>
+            <div class="form-top">
+            <p style="font-weight: bold;">Welcome Back</p>
+            <i class="fa-solid fa-face-smile" style="color: #ff416c; font-size:xx-large;"></i>
+</div>
+        <div class="email">
+         <label >
+            <i class="fa-solid fa-envelope" style="font-size: 25px;"></i>
+        <input type="email" id="email" placeholder="enter your email.." required/>
+        </label>
+        </div>
+<div class="pass">
+    <label>
+      
+        <div class="password-box">
+              <i class="fa-solid fa-lock" style="font-size: 25px;"></i>
+  <input type="password" id="password" placeholder="your Password.." minlength="6" maxlength="12">
+  <span id="eye"><i class="fa-regular fa-eye" style="font-weight:100;"></i></span>
+</div>
+    </label>
+</div>
+<div class="remember">
+    <label>
+        Remember me
+        <input type="checkbox" id="checkbox" name="checkbox" style="direction: rtl;">
+    </label>
+    <a href="#">Forgot password?</a>
+    </div>
+<button type="submit">Verify</button>
+<p style="font-size: small; font-weight: bold;">OR continue with</p>
+<div class="icons">
+    <i class="fa-brands fa-google"></i>
+    <i class="fa-brands fa-square-facebook fa-canvas-roomy" ></i>
+    </div>
+</form>
+    </main>
+    <div class="background-bottom"></div>
+    <script src="pass.js"></script>
+</body>
+</html>
