@@ -22,7 +22,8 @@
         --button-back-hov:#525d8b;
         --button-color-hov:white;
         --fa-brands-color:#ff416c;
-        --fa-brands-back: rgba(255, 255, 255, 0.60); 
+        --fa-brands-back: rgba(255, 255, 255, 0.60);
+        --form-border:2px solid rgba(255,255,255,0.20); 
 }
 body{
     display: flex;
@@ -81,6 +82,7 @@ form{
     height: 100%;
    display: flex;
     flex-direction: column;
+    border: var(--form-border);
     align-items: center;
 justify-content: center;
  gap: 1rem;
